@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: basic-sans, sans-serif;
+    font-size: 1.25rem;
+    margin: auto;
+    width: min(100%, 50rem);
+    padding: 1rem;
+}
+.sirka, h1 {
+    text-align: center;
+}
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    height: auto;
+}
+img + img {
+    margin-top: 2rem;
+}
+.medium, .large {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .medium {
+        display: inline;    
+    }
+    .small, .large {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .large {
+        display: inline;    
+    }
+    .small, .medium {
+        display: none;
+    }
+}
