@@ -16,14 +16,17 @@
         <p class="sirka">šířka okna: <span class="small">méně než 600 pixelů</span><span class="medium">mezi 600 a 900
                 pixely</span><span class="large">více než 900 pixelů</span></p>
         <picture>
+            <!-- obrazky/img-large.jpg 1x, obrazky/img-large@2x.jpg 2x, obrazky/img-large@3x.jpg 3x -->
+            <!-- obrazky/img-medium.jpg 1x, obrazky/img-medium@2x.jpg 2x, obrazky/img-medium@3x.jpg 3x -->
+            <!-- obrazky/img-small.jpg 1x, obrazky/img-small@2x.jpg 2x, obrazky/img-small@3x.jpg 3x -->
             <source 
                 media="(min-width: 900px)" 
-                srcset="obrazky/img-large.jpg 1x, obrazky/img-large@2x.jpg 2x, obrazky/img-large@3x.jpg 3x">
+                srcset="obrazky/img-large.jpg">
             <source 
                 media="(min-width: 600px)" 
-                srcset="obrazky/img-medium.jpg 1x, obrazky/img-medium@2x.jpg 2x, obrazky/img-medium@3x.jpg 3x">
+                srcset="obrazky/img-medium.jpg">
             <source 
-                srcset="obrazky/img-small.jpg 1x, obrazky/img-small@2x.jpg 2x, obrazky/img-small@3x.jpg 3x">
+                srcset="obrazky/img-small.jpg">
             <img src="obrazky/img-large.jpg" alt="kočka s kravatou">
         </picture>
     </section>
