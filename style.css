@@ -12,6 +12,10 @@ body {
 .sirka, h1 {
     text-align: center;
 }
+.main {
+    font-style: 2em;
+    text-transform: uppercase;
+}
 img {
     max-width: 100%;
     display: block;
