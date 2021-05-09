@@ -5,28 +5,63 @@ body {
     font-family: basic-sans, sans-serif;
     font-size: 1.25rem;
     margin: auto;
-    width: min(100%, 50rem);
+    width: min(100%, 80rem);
     padding: 1rem;
     text-align: justify;
-}
-.sirka, h1 {
-    text-align: center;
+    line-height: 1.5;
 }
 .main {
     font-style: 2em;
     text-transform: uppercase;
+    text-align: center;
 }
+.sirka {
+    text-align: center;
+}
+section {
+    display: grid;
+    grid: auto / 200px 1fr;
+    grid-gap: 0 2em;
+}
+.section-title {
+    grid-column: 1 / 2;
+    align-self: flex-start;
+    text-align: right;
+    position: sticky;
+    top: 1em;
+}
+.section-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
 img {
     max-width: 100%;
     display: block;
     margin: auto;
     height: auto;
+
 }
 img + img {
     margin-top: 2rem;
 }
 .medium, .large {
     display: none;
+}
+
+code, .tag{
+    padding: .2em .4em;
+    font-size: .9em;
+    border-radius: 6px;
+    font-family: monospace;
+    color: #000;
+    background-color: rgba(44, 45, 46, 0.15);
+}
+.tag::before {
+    content: '<';
+}
+.tag::after{
+    content: '>';
 }
 
 @media only screen and (min-width: 600px) {
