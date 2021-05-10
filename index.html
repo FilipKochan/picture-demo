@@ -11,7 +11,7 @@
 
 <body>
     <h1 class="main">responsivní obrázky na&nbsp;webu</h1>
-    Na této stránce naleznete způsoby, jak lze při tvorbě responzivních webových stránek přistupovat k obrázkům. Je zde popsán atribut <code>srcset</code>, tag <span class="tag">picture</span> a <code>lazy loading</code>.
+    Na této stránce naleznete způsoby, jak lze při tvorbě responzivních webových stránek přistupovat k obrázkům. Je zde popsán atribut <code>srcset</code>, element <span class="tag">picture</span> a <code>lazy loading</code>.
     
     <section>
         <h1 class="section-title">atribut srcset pro &lt;img></h1>
@@ -19,7 +19,7 @@
             <img
                 loading="lazy"
                 src="jaktofunguje_l3oeyt_c_scale,w_1748.png"
-                sizes="min(calc(100vw - 2rem), 50rem)"
+                sizes="min(calc(100vw - 2rem), 800px)"
                 srcset="
                     obrazky/jaktofunguje_l3oeyt_c_scale,w_200.png 200w,
                     obrazky/jaktofunguje_l3oeyt_c_scale,w_829.png 829w,
@@ -31,14 +31,16 @@
         </div>
     </section>
     <section>
-        <h1 class="section-title">tag &lt;picture></h1>
+        <h1 class="section-title">element &lt;picture></h1>
         <div class="section-content">
-            <p>Tag <span class="tag">picture</span> funguje na velmi podobném principu jako <span class="tag">img</span> 
-            s atributem <code>srcest</code>. V obou případech můžeme dynamicky měnit obrázky, které se na naší stránce zobrazují na základě pravidel, která jsme definovali. Element <span class="tag">picture</span> použijeme tehdy, máme-li několik verzí grafiky s ohledem na rozměry displeje - například pro 
-            </p> 
-            <p>V čem je tedy přínost tagu <span class="tag">picture</span> oproti tagu <span class="tag">img</span> s atributem <code>srcset</code>?</p> 
+            <p>Element <span class="tag">picture</span> nám oproti použití <span class="tag">img srcset=""</span> dává možnost přesně určit, kterou verzi obrázku použít pro který rozměr displeje.</p>
+            <p>Pokud bychom na naši stránku chtěli dát obrázek, může se stát, že na displeji mobilního telefonu nebudou důležité věci na fotce dostatečně výrazné, a proto budeme chtít pro menší displej fotku trochu upravit (například ořezat pozadí tak, aby zde zbyly pouze podstatné věci). </p>
+            <p></p>
+
+            <p>Pokud použijeme <span class="tag">img srcset=""</span>, dáváme tím prohlížeči </p>
             <p class="sirka">šířka okna: <span class="small">méně než 600 pixelů</span><span class="medium">mezi 600 a 900
                     pixely</span><span class="large">více než 900 pixelů</span></p>
+
             <picture>
                 <!-- obrazky/img-large.jpg 1x, obrazky/img-large@2x.jpg 2x, obrazky/img-large@3x.jpg 3x -->
                 <!-- obrazky/img-medium.jpg 1x, obrazky/img-medium@2x.jpg 2x, obrazky/img-medium@3x.jpg 3x -->
