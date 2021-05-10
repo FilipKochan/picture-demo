@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+:root{
+    --modra: #3498db;
+}
 body {
     font-family: basic-sans, sans-serif;
     font-size: 1.25rem;
@@ -11,9 +14,11 @@ body {
     line-height: 1.5;
 }
 .main {
-    font-style: 2em;
+    font-size: 2.5em;
     text-transform: uppercase;
     text-align: center;
+    text-shadow: .3em .3em .2em var(--modra);
+    margin-block: 1em;
 }
 h1 {
     margin-top: 0;
@@ -43,6 +48,7 @@ img {
     display: block;
     margin: auto;
     height: auto;
+    background-color: var(--modra);
 
 }
 img + img {
@@ -66,6 +72,10 @@ code, .tag{
 .tag::after{
     content: '>';
 }
+p:first-child{
+    margin-top: 0;
+}
+
 
 @media only screen and (min-width: 600px) {
     .medium {
@@ -82,5 +92,15 @@ code, .tag{
     }
     .small, .medium {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    section {
+        display: block;
+    }
+    .section-title {
+        position: static;
+        text-align: center;
     }
 }
