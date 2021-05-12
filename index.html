@@ -13,15 +13,14 @@
 
 <body>
     <h1 class="main">responzivní obrázky na&nbsp;webu</h1>
-    Na této stránce naleznete způsoby, jak lze při tvorbě responzivních webových stránek přistupovat k obrázkům. Je zde popsán atribut <code>srcset</code>, element <span class="tag">picture</span> a <code>lazy loading</code>.
-
+    Na této stránce naleznete způsoby, jak lze při tvorbě responzivních webových stránek přistupovat k&nbsp;obrázkům. Je zde popsán atribut <code>srcset</code>, element <span class="tag">picture</span> a&nbsp;<code>lazy loading</code>.
 
     <section>
         <h1 class="section-title">atribut srcset pro &lt;img></h1>
         <div class="section-content">
 
             <p>
-                První možností, jak udělat obrázek responzivním, je použití atributu <code>srcset</code>. Tento atribut se použivá v elementu <span class="tag">img</span>. Atribut <code>srcset</code> nahrazuje <code>src</code>, narozdíl od něj umožňuje použít seznam souborů. Použivá se následovně:
+                První možností, jak udělat obrázek responzivním, je použití atributu <code>srcset</code>. Tento atribut se použivá v&nbsp;elementu <span class="tag">img</span>. Atribut <code>srcset</code> nahrazuje <code>src</code>, narozdíl od něj umožňuje použít seznam souborů. Použivá se následovně:
             </p>
 
             <div class="code-block">
@@ -39,24 +38,24 @@
     alt="schéma projektu"></pre>
             </div>
             <p>
-                Přestože atribut <code>srcset</code> nahrazuje atribut <code>src</code>, tak je důležité atribut <code>src</code> v elementu ponechat. Důvodem jsou starší prohlížeče, které <code>srcset</code> nepodporují, a tak ho ignorují a použijí standartní <code>src</code>.
+                Přestože atribut <code>srcset</code> nahrazuje atribut <code>src</code>, tak je důležité atribut <code>src</code> v&nbsp;elementu ponechat. Důvodem jsou starší prohlížeče, které <code>srcset</code> nepodporují, a&nbsp;tak ho ignorují a&nbsp;použijí standartní <code>src</code>.
             </p>
 
             <p>
-                Do atributu <code>srcset</code> tedy vypisujeme jednotlivé zdroje obrázků oddělené čárkami. Za nimi je nutné napsat šířku daného obrázku v pixelech, jednotku zde značíme <code>w</code>. Toto umožňuje prohlížeči vybírat, který obrázek
+                Do atributu <code>srcset</code> tedy vypisujeme jednotlivé zdroje obrázků oddělené čárkami. Za nimi je nutné napsat šířku daného obrázku v&nbsp;pixelech, jednotku zde značíme <code>w</code>. Toto umožňuje prohlížeči vybírat, který obrázek
                 je vhodný dle velikosti, bez toho, aniž by musel obrázek načíst.
             </p>
 
             <p>
-                Společně se <code>srcset</code> se používá atribut <code>sizes</code>. Ten nám udává podmínky, podle kterých má prohlížeč vybrat obrázek a jaké velikosti obrázků použít. Vždy se zde musí napsat velikosti obrázků, ale můžeme také před ně
-                do závorky napsat, za jakých podmínek se má tato velikost vybrat. Vždy je nutné mít alespoň jednu velikost obrázku neomezenou podmínkou pro případ, kdy by neplatila žádná z předchozích podmínek. Podmínky se řetězí za sebe, prohlížeč je
-                čte zleva a vybere vždy první pravdivou.
+                Společně se <code>srcset</code> se používá atribut <code>sizes</code>. Ten nám udává podmínky, podle kterých má prohlížeč vybrat obrázek a&nbsp;jaké velikosti obrázků použít. Vždy se zde musí napsat velikosti obrázků, ale můžeme také před ně
+                do závorky napsat, za jakých podmínek se má tato velikost vybrat. Vždy je nutné mít alespoň jednu velikost obrázku neomezenou podmínkou pro případ, kdy by neplatila žádná z&nbsp;předchozích podmínek. Podmínky se řetězí za sebe, prohlížeč je
+                čte zleva a&nbsp;vybere vždy první pravdivou.
             </p>
             <p>Lze zde použít matematické CSS funkce <code>max()</code>,
-                <code>min()</code> a <code>calc()</code>. V <code>sizes</code> používáme jednotky délky <code>px</code> a <code>em</code> nebo jednotku velikosti viewportu
+                <code>min()</code> a&nbsp;<code>calc()</code>. V&nbsp;<code>sizes</code> používáme jednotky délky <code>px</code> a&nbsp;<code>em</code> nebo jednotku velikosti viewportu
                 <code>vw</code>.</p>
             <p>
-                V následujícím příkladu využijeme funkci <code>min()</code>, která vybere ten menší ze zadaných parametrů. Tady nastane situace, kdy prohlížeč vybírá, zda je menší 100 % velikosti viewportu či 750 pixelů a pak hledá vhodný obrázek pro danou šířku. Zatím zde zadáváme
+                V&nbsp;následujícím příkladu využijeme funkci <code>min()</code>, která vybere ten menší ze zadaných parametrů. Tady nastane situace, kdy prohlížeč vybírá, zda je menší 100 % velikosti viewportu či 750 pixelů a&nbsp;pak hledá vhodný obrázek pro danou šířku. Zatím zde zadáváme
                 jen velikost bez podmínek.
             </p>
 
@@ -75,11 +74,11 @@
     alt="schéma projektu"></pre>
             </div>
             <p>
-                V dalším příkladu použijeme několik podmínek za sebou a za ně napíšeme, jakou velikost obrázku má prohlížeč pro danou podmínku vybrat.
+                V&nbsp;dalším příkladu použijeme několik podmínek za sebou a&nbsp;za ně napíšeme, jakou velikost obrázku má prohlížeč pro danou podmínku vybrat.
             </p>
             <p>
-                Prohlížeč zde uvažuje tak, že vždy zkontroluje, zda je velikost viewportu alespoň tak veliká jako v podmínce (1200 px), a když není, tak přejde na podmínku další. Prohlížeč vybere vždy první podmínku zleva, která je pravdivá. Když není pravdivá žádná, tak vybere poslední
-                velikost. To je v našem případě 200 pixelů.
+                Prohlížeč zde uvažuje tak, že vždy zkontroluje, zda je velikost viewportu alespoň tak veliká jako v&nbsp;podmínce (1200 px), a&nbsp;když není, tak přejde na podmínku další. Prohlížeč vybere vždy první podmínku zleva, která je pravdivá. Když není pravdivá žádná, tak vybere poslední
+                velikost. To je v&nbsp;našem případě 200 pixelů.
             </p>
             <div class="code-block">
                 <pre>
@@ -97,8 +96,8 @@
             </div>
 
             <p>
-                V poslední řadě je důležité myslet na displeje s vyšší hustotou pixelů, u kterých má smysl uvažovat o obrázcích s vyšším rozlišením, než je skutečná velikost obrázku na stránce. Například pokud obrázek na stránce zabírá 800 pixelů, tak pro diplej s hustotou
-                pixelů dva je potřeba mít obrázek s reálnou velikostí 1600 pixelů.
+                V&nbsp;poslední řadě je důležité myslet na displeje s&nbsp;vyšší hustotou pixelů, u&nbsp;kterých má smysl uvažovat o&nbsp;obrázcích s&nbsp;vyšším rozlišením, než je skutečná velikost obrázku na stránce. Například pokud obrázek na stránce zabírá 800 pixelů, tak pro diplej s&nbsp;hustotou
+                pixelů dva je potřeba mít obrázek s&nbsp;reálnou velikostí 1600 pixelů.
             </p>
 
             <img loading="lazy" width="829" height="622" src="jaktofunguje_l3oeyt_c_scale,w_1748.png" sizes="min(calc(100vw - 2rem), 800px)" srcset="
@@ -106,19 +105,19 @@
                         obrazky/jaktofunguje_l3oeyt_c_scale,w_829.png 829w,
                         obrazky/jaktofunguje_l3oeyt_c_scale,w_1311.png 1311w,
                         obrazky/jaktofunguje_l3oeyt_c_scale,w_1748.png 1748w,
-                        obrazky/jaktofunguje_l3oeyt_c_scale,w_2304.png 2304w" id="imgjaktofunguje" alt='schéma projektu Pro první linii ("Skrze náš projekt proměníme vaše příspěvky v pomoc zdravotníků, například ve formě obědů ze zlínských restaurací.")'>
+                        obrazky/jaktofunguje_l3oeyt_c_scale,w_2304.png 2304w" id="imgjaktofunguje" alt='schéma projektu Pro první linii ("Skrze náš projekt proměníme vaše příspěvky v&nbsp;pomoc zdravotníků, například ve formě obědů ze zlínských restaurací.")'>
         </div>
 
     </section>
     <section>
         <h1 class="section-title">element &lt;picture></h1>
         <div class="section-content">
-            <p>Pokud bychom na naši stránku chtěli dát obrázek, může se stát, že na displeji mobilního telefonu nebudou důležité věci na fotce dostatečně výrazné, a proto budeme chtít pro menší displej fotku trochu upravit (například ořezat pozadí tak, aby
+            <p>Pokud bychom na naši stránku chtěli dát obrázek, může se stát, že na displeji mobilního telefonu nebudou důležité věci na fotce dostatečně výrazné, a&nbsp;proto budeme chtít pro menší displej fotku trochu upravit (například ořezat pozadí tak, aby
                 zde zbyly pouze podstatné věci). </p>
 
             <p> </p>
 
-            <p>V takových případech, kdy si chceme sami určit pro různé případy jiné obrázky, se používá element <span class="tag">picture</span>. Pokud použijeme <span class="tag">img srcset=""</span>, dáváme tím prohlížeči na výběr z několika možností,
+            <p>V&nbsp;takových případech, kdy si chceme sami určit pro různé případy jiné obrázky, se používá element <span class="tag">picture</span>. Pokud použijeme <span class="tag">img srcset=""</span>, dáváme tím prohlížeči na výběr z&nbsp;několika možností,
                 on sám si poté zvolí tu podle něj nejlepší. Element <span class="tag">picture</span> nám oproti tomu dává možnost přesně určit, kterou verzi obrázku použít pro který rozměr displeje. </p>
             <p>Element <span class="tag">picture</span> použijeme následovně: </p>
 
@@ -131,18 +130,18 @@
     &lt;img src="obrazky/img-large.jpg" alt="kočka s kravatou">
 &lt;/picture></pre>
             </div>
-            <p>Každý element <span class="tag">picture</span> musí obsahovat alespoň jeden element <span class="tag">source</span> a právě jeden element <span class="tag">img</span>.</p>
-            <p>To, kdy se použije daný <span class="tag">source</span>, určuje podmínka zapsaná v atributu
-                <code>media</code>. V tomto případě se první <span class="tag">source</span> použije v případě, že šířka obrazovky je alespoň 900 pixelů, pro šířku obrazovky mezi 600 a 900 pixely se uplatní druhý <span class="tag">source</span> a pro
-                obrazovky menší než 600 pixelů potom <span class="tag">source</span> poslední. Použije se vždy první <span class="tag">source</span>, jehož podmínka platí. Proto je potřeba myslet na pořadí těchto elementů - pokud používáme v podmínkách
-                <code>(min-width: )</code>, šířky obrazovky píšeme od největších po nejmenší. (Poslední <span class="tag">source</span> v našem případě podmínku nemá, tím pádem se uplatní automaticky, pokud na něj dojde řada.)
+            <p>Každý element <span class="tag">picture</span> musí obsahovat alespoň jeden element <span class="tag">source</span> a&nbsp;právě jeden element <span class="tag">img</span>.</p>
+            <p>To, kdy se použije daný <span class="tag">source</span>, určuje podmínka zapsaná v&nbsp;atributu
+                <code>media</code>. V&nbsp;tomto případě se první <span class="tag">source</span> použije v&nbsp;případě, že šířka obrazovky je alespoň 900 pixelů, pro šířku obrazovky mezi 600 a&nbsp;900 pixely se uplatní druhý <span class="tag">source</span> a&nbsp;pro
+                obrazovky menší než 600 pixelů potom <span class="tag">source</span> poslední. Použije se vždy první <span class="tag">source</span>, jehož podmínka platí. Proto je potřeba myslet na pořadí těchto elementů - pokud používáme v&nbsp;podmínkách
+                <code>(min-width: )</code>, šířky obrazovky píšeme od největších po nejmenší. (Poslední <span class="tag">source</span> v&nbsp;našem případě podmínku nemá, tím pádem se uplatní automaticky, pokud na něj dojde řada.)
             </p>
             <p>
-                Dále element <span class="tag">source</span> obsahuje atribut <code>srcset</code>. Ten funguje stejně jako při použití s elementem <span class="tag">img</span>. Zde tedy píšeme samotné zdroje pro daný obrázek. I zde může být jeden či více
+                Dále element <span class="tag">source</span> obsahuje atribut <code>srcset</code>. Ten funguje stejně jako při použití s&nbsp;elementem <span class="tag">img</span>. Zde tedy píšeme samotné zdroje pro daný obrázek. I&nbsp;zde může být jeden či více
                 těchto zdrojů.
             </p>
             <p>
-                Předchozí kód můžeme zlepšit tak, že pro každý typ našeho obrázku přidáme ještě 3 jeho verze, a to podle rozlišení displeje - 1x, 2x a 3x. HTML kód potom vypadá následovně:
+                Předchozí kód můžeme zlepšit tak, že pro každý typ našeho obrázku přidáme ještě 3 jeho verze, a&nbsp;to podle rozlišení displeje - 1x, 2x a&nbsp;3x. HTML kód potom vypadá následovně:
             </p>
             <div class="code-block">
                 <pre>&lt;picture>
@@ -158,11 +157,11 @@
     &lt;img src="obrazky/img-large.jpg" alt="kočka s kravatou">
 &lt;/picture></pre>
             </div>
-            <p>Jako první se tedy podle šířky obrazovky vybere typ obrázku (respektive <span class="tag">source</span>). Poté, když je vybrán <span class="tag">source</span>, vybere se z jeho atributu <code>srcset</code> takový obrázek, aby odpovídal danému
+            <p>Jako první se tedy podle šířky obrazovky vybere typ obrázku (respektive <span class="tag">source</span>). Poté, když je vybrán <span class="tag">source</span>, vybere se z&nbsp;jeho atributu <code>srcset</code> takový obrázek, aby odpovídal danému
                 rozlišení displeje.</p>
 
-            <p>Další částí elementu <span class="tag">picture</span> je element <span class="tag">img</span>. Ten je potřeba, protože se zde zobrazí samotný obrázek, který se vybere z elementů <span class="tag">source</span>. Element <span class="tag">img</span>                by však i přesto měl obsahovat atribut <code>src</code>, jelikož ne všechny prohlížeče umějí s elementem <span class="tag">picture</span> pracovat. V takových případech se použije právě odkaz <code>src</code> samotného elementu <span class="tag">img</span>.</p>
-            <p>Jelikož se samotný obrázek zobrazuje v elementu <span class="tag">img</span>, je potřeba směřovat všechna CSS pravidla na něj - ne na <span class="tag">picture</span>. Pokud bychom napsali například</p>
+            <p>Další částí elementu <span class="tag">picture</span> je element <span class="tag">img</span>. Ten je potřeba, protože se zde zobrazí samotný obrázek, který se vybere z&nbsp;elementů <span class="tag">source</span>. Element <span class="tag">img</span>                by však i&nbsp;přesto měl obsahovat atribut <code>src</code>, jelikož ne všechny prohlížeče umějí s&nbsp;elementem <span class="tag">picture</span> pracovat. V&nbsp;takových případech se použije právě odkaz <code>src</code> samotného elementu <span class="tag">img</span>.</p>
+            <p>Jelikož se samotný obrázek zobrazuje v&nbsp;elementu <span class="tag">img</span>, je potřeba směřovat všechna CSS pravidla na něj - ne na <span class="tag">picture</span>. Pokud bychom napsali například</p>
             <div class="code-block">
                 <pre>picture {
     max-width: 100%;
@@ -170,7 +169,7 @@
 }</pre>
             </div>
             <p>nemělo by to na obrázek žádný efekt.</p>
-            <p>Použití elementu <span class="tag">picture</span> můžeme vidět na obrázku níže. Se změnou šířky okna se budou měnit i jednotlivé verze obrázku. (Klíčové body jsou 600 a 900 pixelů.)
+            <p>Použití elementu <span class="tag">picture</span> můžeme vidět na obrázku níže. Se změnou šířky okna se budou měnit i&nbsp;jednotlivé verze obrázku. (Klíčové body jsou 600 a&nbsp;900 pixelů.)
             </p>
             <p class="sirka">šířka okna: <span class="small">méně než 600 pixelů</span><span class="medium">mezi 600 a
                     900
@@ -192,44 +191,43 @@
         <h1 class="section-title">lazy loading</h1>
         <div class="section-content">
             <p>
-                Lazy loading umožňuje načítat obrázky na webové stránce až tehdy, když se k nim uživatel dostane svým viewportem dostatečně blízko. To může být dobré hned z několika důvodů:</p>
+                Lazy loading umožňuje načítat obrázky na webové stránce až tehdy, když se k&nbsp;nim uživatel dostane svým viewportem dostatečně blízko. To může být dobré hned z&nbsp;několika důvodů:</p>
             <ul>
                 <li>Sníží se čas prvotního načtení stránky.</li>
                 <li>Pokud se na stránce vyskytuje <code>script</code>, který čeká na načtení stránky, začne běžet dříve.
                 </li>
-                <li>Pokud se uživatel k obrázku na stránce vůbec nedostane, obrázek se nemusí načíst vůbec a ušetří se tak data za přenos.</li>
+                <li>Pokud se uživatel k&nbsp;obrázku na stránce vůbec nedostane, obrázek se nemusí načíst vůbec a&nbsp;ušetří se tak data za přenos.</li>
             </ul>
 
-            <p>Dříve se pro lazy loading používal <code>JavaScript</code>, nyní lze tohoto efektu docílit nativně v HTML.
+            <p>Dříve se pro lazy loading používal <code>JavaScript</code>, nyní lze tohoto efektu docílit nativně v&nbsp;HTML.
             </p>
             <p>
                 Pro použití lazy loadingu danému elementu <span class="tag">img</span> přiřadíme atribut
-                <code>loading</code> s hodnotou <code>"lazy"</code>. (Výchozí hodnota atributu <code>loading</code> je
+                <code>loading</code> s&nbsp;hodnotou <code>"lazy"</code>. (Výchozí hodnota atributu <code>loading</code> je
                 <code>"eager"</code>.) První ze tří následujících obrázků je tedy zapsán následovně:
             </p>
             <p><span class="tag">img loading="lazy" src="obrazky/photo-2.jpg"
                     alt="představitelé Top Gearu stojící v řece"</span></p>
             <p>
-                S lazy loadingem se však pojí několik problémů. Jedním z nich je například to, že postupné načítání obrázků může způsobovat posouvání obsahu, který se pod nimi nachází. To může být velice nepříjemné, obzvlášť v případě, kdy uživatel začne na stránce něco
-                číst, pak se načte obrázek a celý text se posune o několik řádků dolů.
+                S&nbsp;lazy loadingem se však pojí několik problémů. Jedním z&nbsp;nich je například to, že postupné načítání obrázků může způsobovat posouvání obsahu, který se pod nimi nachází. To může být velice nepříjemné, obzvlášť v&nbsp;případě, kdy uživatel začne na stránce něco
+                číst, pak se načte obrázek a&nbsp;celý text se posune o&nbsp;několik řádků dolů.
             </p>
 
-            <p>Řešení tohoto problému spočívá v tom, že elementu <span class="tag">img</span> přiřadíme atributy
-                <code>width</code> a <code>height</code>, neboli skutečné rozměry obrázku. (Ty najdeme například ve vlastnostech obrázku.)
+            <p>Řešení tohoto problému spočívá v&nbsp;tom, že elementu <span class="tag">img</span> přiřadíme atributy
+                <code>width</code> a&nbsp;<code>height</code>, neboli skutečné rozměry obrázku. (Ty najdeme například ve vlastnostech obrázku.)
             </p>
-            <p>I když obrázek ještě není načtený, tak pokud má přiřazené atributy <code>width</code> a
-                <code>height</code>, bude na stránce zabírat takové místo, jako by už načtený byl. Tím pádem nedojde k žádnému nežádoucímu posouvání obsahu na stránce. Předchozí kód bychom tedy mohli &bdquo;vylepšit&ldquo; následovně:
+            <p>I&nbsp;když obrázek ještě není načtený, tak pokud má přiřazené atributy <code>width</code> a
+                <code>height</code>, bude na stránce zabírat takové místo, jako by už načtený byl. Tím pádem nedojde k&nbsp;žádnému nežádoucímu posouvání obsahu na stránce. Předchozí kód bychom tedy mohli &bdquo;vylepšit&ldquo; následovně:
             </p>
             <p><span class="tag">img loading="lazy" width="1920" height="1080" src="obrazky/photo-2.jpg"
                     alt="představitelé Top Gearu stojící v řece"</span></p>
             <p>
-                Nyní sice k posouvání obsahu na stránce již nedojde, ale prázdné místo na stránce, kam se později načte obrázek, může uživatele zmást. Abychom tomuto problému předešli, můžeme například dát obrázku barevné pozadí, které uživatele upozorní na to, že zde
+                Nyní sice k&nbsp;posouvání obsahu na stránce již nedojde, ale prázdné místo na stránce, kam se později načte obrázek, může uživatele zmást. Abychom tomuto problému předešli, můžeme například dát obrázku barevné pozadí, které uživatele upozorní na to, že zde
                 ještě není všechno plně načteno. Tento způsob využívala například webová stránka Pintrest.
             </p>
             <img loading="lazy" width="1920" height="1080" src="obrazky/photo-2.jpg" alt="představitelé Top Gearu stojící v řece">
-            <img loading="lazy" width="1104" height="626" src="obrazky/cliff-scene.jpg" alt="Jeremy Clarkson si vychutnává svou zmrzlinu a netuší, že jeho karavan každou chvíli spadne z útesu...">
+            <img loading="lazy" width="1104" height="626" src="obrazky/cliff-scene.jpg" alt="Jeremy Clarkson si vychutnává svou zmrzlinu a&nbsp;netuší, že jeho karavan každou chvíli spadne z&nbsp;útesu...">
             <img loading="lazy" width="1000" height="554" src="obrazky/zapad.jpg" alt="západ slunce">
-
 
         </div>
     </section>
@@ -237,3 +235,4 @@
 </body>
 
 </html>
+
